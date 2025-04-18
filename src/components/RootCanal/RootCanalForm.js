@@ -69,10 +69,7 @@ const RootCanalForm = () => {
       <DragDropContext onDragEnd={onDragEnd}>
         <Droppable droppableId="sections">
           {(provided) => (
-            <div
-              {...provided.droppableProps}
-              ref={provided.innerRef}
-            >
+            <div {...provided.droppableProps} ref={provided.innerRef}>
               {sections.map((section, index) => (
                 <Draggable
                   key={section.id}
@@ -103,10 +100,6 @@ const RootCanalForm = () => {
           )}
         </Droppable>
       </DragDropContext>
-      <div className="flex gap-3 mt-6 justify-end">
-        <Button>Send Referral</Button>
-        <Button variant="primary">Save Note</Button>
-      </div>
     </div>
   );
 };

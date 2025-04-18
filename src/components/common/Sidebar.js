@@ -1,15 +1,22 @@
-import React from 'react';
-import TemplateList from '../Template/TemplateList';
+import React from "react";
+import TemplateList from "../Template/TemplateList";
+import { FiEdit2 } from "react-icons/fi";
 
 const Sidebar = () => {
   return (
-    <div className="w-[300px] bg-white border-r border-gray-200 flex flex-col h-screen">
-      <div className="p-6 border-b border-gray-200">
-        <div className="text-lg font-semibold text-gray-900">Template</div>
+    <div className="w-[315px] h-full overflow-auto relative flex-shrink-0 rounded-lg bg-[#E3E3E3] flex flex-col ">
+      <div className="px-4">
+        <div className="text-[36px] mt-6 mb-4 text-center font-semibold text-[#151515]">
+          Template
+        </div>
+        <TemplateList />
       </div>
-      <TemplateList />
+      <button className="sticky w-full left-0 bottom-0 bg-[#151515] overflow-hidden rounded-b-xl text-white py-8 px-4 rounded-[4px] flex items-center h-16 justify-center gap-2 text-base hover:bg-gray-800">
+        Edit
+        <FiEdit2 className="w-4 h-4" />
+      </button>
     </div>
   );
 };
 
-export default Sidebar; 
+export default Sidebar;
