@@ -68,6 +68,16 @@ const defaultSections = [
     title: "Treatment:",
     content: [],
   },
+  {
+    id: "treatment2",
+    title: "Treatment:",
+    content: [],
+  },
+  {
+    id: "treatment1",
+    title: "Treatment:",
+    content: [],
+  },
 ];
 
 const RootCanalForm = () => {
