@@ -1,36 +1,7 @@
 import React, { useState } from "react";
-import styled from "styled-components";
 import { DragDropContext, Droppable, Draggable } from "@hello-pangea/dnd";
 import Section from "./Section";
 import Button from "../common/Button";
-
-const FormContainer = styled.div`
-  padding: 24px;
-  background: #f5f5f5;
-  border-radius: 12px;
-`;
-
-const ButtonContainer = styled.div`
-  display: flex;
-  gap: 12px;
-  margin-top: 24px;
-  justify-content: flex-end;
-`;
-
-const DraggableSection = styled.div`
-  background: ${props => props.isDragging ? '#f0f0f0' : 'transparent'};
-  border-radius: 8px;
-  transition: background-color 0.2s ease;
-  transform: ${props => props.isDragging ? 'scale(1.02)' : 'scale(1)'};
-  box-shadow: ${props => props.isDragging ? '0 4px 8px rgba(0,0,0,0.1)' : 'none'};
-  position: relative;
-  z-index: ${props => props.isDragging ? 1 : 0};
-  cursor: grab;
-  
-  &:active {
-    cursor: grabbing;
-  }
-`;
 
 const defaultSections = [
   {
@@ -94,7 +65,7 @@ const RootCanalForm = () => {
   };
 
   return (
-    <FormContainer>
+    <div className="p-6 bg-gray-50 rounded-xl">
       <DragDropContext onDragEnd={onDragEnd}>
         <Droppable droppableId="sections">
           {(provided) => (
@@ -109,17 +80,21 @@ const RootCanalForm = () => {
                   index={index}
                 >
                   {(provided, snapshot) => (
-                    <DraggableSection
+                    <div
                       ref={provided.innerRef}
                       {...provided.draggableProps}
                       {...provided.dragHandleProps}
-                      isDragging={snapshot.isDragging}
+                      className={`mb-4 transition-all duration-200 ${
+                        snapshot.isDragging
+                          ? "bg-gray-100 scale-105 shadow-md relative z-10"
+                          : "bg-transparent"
+                      }`}
                     >
                       <Section
                         title={section.title}
                         content={section.content}
                       />
-                    </DraggableSection>
+                    </div>
                   )}
                 </Draggable>
               ))}
@@ -128,11 +103,11 @@ const RootCanalForm = () => {
           )}
         </Droppable>
       </DragDropContext>
-      <ButtonContainer>
+      <div className="flex gap-3 mt-6 justify-end">
         <Button>Send Referral</Button>
         <Button variant="primary">Save Note</Button>
-      </ButtonContainer>
-    </FormContainer>
+      </div>
+    </div>
   );
 };
 
