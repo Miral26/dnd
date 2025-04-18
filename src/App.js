@@ -2,7 +2,6 @@ import React from "react";
 import RootCanalForm from "./components/RootCanal/RootCanalForm";
 import Sidebar from "./components/common/Sidebar";
 import IconSidebar from "./components/common/IconSidebar";
-import { FiInfo } from "react-icons/fi";
 import "./App.css";
 import Header from "./components/common/Header";
 
@@ -19,10 +18,28 @@ const App = () => {
               <div className="flex justify-between items-center mb-6">
                 <div className="text-[36px] flex items-center gap-2 text-center font-semibold text-[#151515]">
                   Root Canal
-                  <FiInfo className="cursor-pointer" />
+                  <svg
+                    width="32"
+                    height="32"
+                    viewBox="0 0 32 32"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g clip-path="url(#clip0_1_274)">
+                      <path
+                        d="M14.6667 9.33333H17.3334V12H14.6667V9.33333ZM14.6667 14.6667H17.3334V22.6667H14.6667V14.6667ZM16 2.66666C8.64002 2.66666 2.66669 8.64 2.66669 16C2.66669 23.36 8.64002 29.3333 16 29.3333C23.36 29.3333 29.3334 23.36 29.3334 16C29.3334 8.64 23.36 2.66666 16 2.66666ZM16 26.6667C10.12 26.6667 5.33335 21.88 5.33335 16C5.33335 10.12 10.12 5.33333 16 5.33333C21.88 5.33333 26.6667 10.12 26.6667 16C26.6667 21.88 21.88 26.6667 16 26.6667Z"
+                        fill="#151515"
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_1_274">
+                        <rect width="32" height="32" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
                 </div>
                 <div className="flex gap-[22px] items-center">
-                  <button className="flex items-center gap-2 px-8 py-[14px] rounded-[20px] text-sm font-medium bg-white text-gray-900 border border-[#919191] hover:bg-gray-50">
+                  <button className="flex items-center gap-2 px-8 py-[14px] rounded-[20px] text-sm font-semibold bg-white text-gray-900 border border-[#919191] hover:bg-gray-50">
                     <svg
                       width="14"
                       height="19"

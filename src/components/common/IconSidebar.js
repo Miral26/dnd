@@ -1,11 +1,4 @@
 import React from "react";
-import {
-  FiCalendar,
-  FiVideo,
-  FiUser,
-  FiSettings,
-  FiArrowRight,
-} from "react-icons/fi";
 
 const IconSidebar = () => {
   return (
