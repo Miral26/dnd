@@ -1,60 +1,20 @@
-import React from 'react';
-import styled from 'styled-components';
-
-const SectionContainer = styled.div`
-  background: #f0f0f0;
-  border-radius: 8px;
-  padding: 16px;
-  margin-bottom: 12px;
-
-  &:last-child {
-    margin-bottom: 0;
-  }
-`;
-
-const SectionTitle = styled.h3`
-  margin: 0 0 12px 0;
-  font-size: 14px;
-  font-weight: 500;
-  color: #1a1a1a;
-`;
-
-const SectionContent = styled.div`
-  background: white;
-  border-radius: 6px;
-  padding: 12px 16px;
-  min-height: 48px;
-`;
-
-const BulletPoint = styled.li`
-  margin-bottom: 8px;
-  color: #666;
-  font-size: 14px;
-  line-height: 1.5;
-  
-  &:last-child {
-    margin-bottom: 0;
-  }
-
-  &::marker {
-    color: #666;
-    font-size: 14px;
-  }
-`;
+import React from "react";
 
 const Section = ({ title, content }) => {
   return (
-    <SectionContainer>
-      <SectionTitle>{title}</SectionTitle>
-      <SectionContent>
-        <ul style={{ margin: 0, paddingLeft: 20 }}>
+    <div className="bg-[#F2F2F2] max-w-[458px] px-4 py-3 rounded-xl overflow-hidden">
+      <h3 className="text-base font-semibold text-black">{title}</h3>
+      <div className="ml-4 mt-2">
+        <ul className="list-disc text-base pl-4 space-y-2">
           {content.map((item, index) => (
-            <BulletPoint key={`${title}-${index}`}>{item}</BulletPoint>
+            <li key={index} className="text-[16px] text-[#151515]">
+              {item}
+            </li>
           ))}
         </ul>
-      </SectionContent>
-    </SectionContainer>
+      </div>
+    </div>
   );
 };
 
-export default Section; 
+export default Section;

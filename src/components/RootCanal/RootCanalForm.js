@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { DragDropContext, Droppable, Draggable } from "@hello-pangea/dnd";
 import Section from "./Section";
-import Button from "../common/Button";
 
 const defaultSections = [
   {
@@ -35,19 +34,14 @@ const defaultSections = [
     content: ["Suspected tooth abscess"],
   },
   {
-    id: "treatment",
-    title: "Treatment:",
-    content: [],
+    id: "heart Disease",
+    title: "Heart Disease:",
+    content: ["No"],
   },
   {
-    id: "treatment2",
-    title: "Treatment:",
-    content: [],
-  },
-  {
-    id: "treatment1",
-    title: "Treatment:",
-    content: [],
+    id: "diabetes",
+    title: "Diabetes:",
+    content: ["No"],
   },
 ];
 
@@ -81,11 +75,7 @@ const RootCanalForm = () => {
                       ref={provided.innerRef}
                       {...provided.draggableProps}
                       {...provided.dragHandleProps}
-                      className={`mb-4 transition-all duration-200 ${
-                        snapshot.isDragging
-                          ? "bg-gray-100 scale-105 shadow-md relative z-10"
-                          : "bg-transparent"
-                      }`}
+                      className={`mb-4`}
                     >
                       <Section
                         title={section.title}
